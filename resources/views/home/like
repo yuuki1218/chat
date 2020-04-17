@@ -1,0 +1,17 @@
+ @if (Auth::id() != $user->id)
+                         
+                        @if(Auth::user()->is_like($post->id))
+                        
+                            {!! Form::open(['route' => ['likes.unlike', $post->id], 'method' => 'delete']) !!}
+                                {!! Form::submit('いいね！を外す', ['class' => "button btn-warning"]) !!}
+                            {!! Form::close() !!}
+                            
+                        @else
+                        
+                            {!! Form::open(['route' => ['likes.like', $post->id]]) !!}
+                                {!! Form::submit('いいね！をつける', ['class' => "button btn btn-success"]) !!}
+                            {!! Form::close !!}
+                        
+                        @endif
+                        
+                    @endif
