@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container ">
         <div class="border p-4">
             <h1 class="h5 mb-4">
                 投稿の新規作成

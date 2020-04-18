@@ -16,7 +16,7 @@ Route::get('/', 'PostsController@index')->name('top');
 Route::group(['middleware' => 'auth'], function() {
         Route::get ('posts/create', 'PostsController@create');
         Route::post('posts/create', 'PostsController@store');
-        Route::get ('posts/index', 'PostsController@show');
+        Route::get ('/posts/show/{id}', 'PostsController@show');
     });
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['prefix' => 'posts/{id}'], function() {
