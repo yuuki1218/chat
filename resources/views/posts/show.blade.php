@@ -16,7 +16,7 @@
                     コメント
                 </h2>
 
-                @forelse($post->comments() as $comment)
+                @forelse($post->comments as $comment)
                     <div class="border-top p-4">
                         <time class="text-secondary">
                             {{ $comment->created_at->format('Y.m.d H:i') }}

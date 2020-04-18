@@ -27,10 +27,6 @@
                             コメント {{ $post->comments->count() }}件
                         </span>
                     @endif
-                    <p class="card-text">
-                        {!! nl2br(e(str_limit($post->body, 200))) !!}
-                    </p>
-
                     <a class="card-link" href="{{ action('PostsController@show', ['id' => $post->id]) }}">
                         続きを読む
                     </a>
