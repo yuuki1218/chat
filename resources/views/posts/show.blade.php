@@ -8,7 +8,7 @@
             </h1>
 
             <p class="mb-5">
-                {!! nl2br(e($post->body)) !!}
+                {{ $post->body }}
             </p>
 
             <section>
@@ -22,7 +22,7 @@
                             {{ $comment->created_at->format('Y.m.d H:i') }}
                         </time>
                         <p class="mt-2">
-                            {!! nl2br(e($comment->body)) !!}
+                            {{ $comment->body }}
                         </p>
                     </div>
                 @empty

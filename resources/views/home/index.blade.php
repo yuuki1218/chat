@@ -31,7 +31,7 @@
                         {!! nl2br(e(str_limit($post->body, 200))) !!}
                     </p>
 
-                    <a class="card-link" href="{{ action('PostsController@show') }}">
+                    <a class="card-link" href="{{ action('PostsController@show', ['id' => $post->id]) }}">
                         続きを読む
                     </a>
                 </div>

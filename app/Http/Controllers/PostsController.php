@@ -12,7 +12,6 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->get();
-        
         return view('home.index', ['posts' => $posts]);
     }
     
@@ -29,21 +28,18 @@ class PostsController extends Controller
         $posts->title = $request->title;
         $posts->user_name = $request->user()->name;
         $posts->body = $request->body;
-        
         $posts->save();
         
 
     return redirect('posts/create');
     }
     
-    public function show(Request $request)
+    public function show($post_id)
         {
-            $post = new Post;
-            $post->latest()->get();
+            $post = Post::find($post_id);
+            
 
-            return view('posts.show', [
-            'post' => $post,
-            ]);
+            return view('posts.show')->with('post', $post);
         }
 
 }
